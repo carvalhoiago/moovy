@@ -45,12 +45,17 @@ export const Container = styled.nav`
   .right-section a{
     margin-right: 80px;
     text-decoration: none;
-    color: #F2911B;
+    color: black;
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-
+    
   }
+  .current-path {
+      color: #F2911B !important;
+    }
+  
+
 `;

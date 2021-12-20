@@ -2,8 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppRoutes } from './Routes'
 import  GlobalStyle  from './styles/Global'
 import { Navbar } from './components/Navbar'
-import { Card } from './components/Card'
-import { MyLibrary } from './pages/MyLibrary'
+import { NotFound } from './components/NotFound'
 
 function App() {
   return (
