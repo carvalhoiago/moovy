@@ -3,15 +3,18 @@ import { AppRoutes } from './Routes'
 import  GlobalStyle  from './styles/Global'
 import { Navbar } from './components/Navbar'
 import { NotFound } from './components/NotFound'
+import LibraryProvider from "./components/contexts/useLibraryContext";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle/>
-      <Navbar/>
-      <div className='content'>
-        <AppRoutes/>
-      </div>
+      <LibraryProvider>
+        <Navbar/>
+        <div className='content'>
+          <AppRoutes/>
+        </div>
+      </LibraryProvider>
     </BrowserRouter>
   );
 }

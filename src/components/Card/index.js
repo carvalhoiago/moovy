@@ -3,13 +3,13 @@ import Rocky from '../../assets/rocky.jpg'
 import { AiFillStar } from 'react-icons/ai'
 import { Buttom } from '../Buttom'
 
-export const Card  = () => {
+export const Card  = (props) => {
   return(
     <Container>
-      <img src={Rocky} alt='Rocky IV'/>
+      <img src={props.url} alt={props.title}/>
       <div className='movie-info'>
         <div className='movie-title'>
-          <h2>Rocky IV</h2>
+          <h2>{props.title}</h2>
         </div>
         <div className='movie-rating'>
         <AiFillStar className='star-icon'/>
