@@ -16,6 +16,8 @@ export const SearchBar = (props) => {
         if(response.data.Response == "True"){
           props.setState(response.data.Search)
           console.log(response.data.Search);
+        } else{
+          props.setState([])
         }
       })
     } else {
