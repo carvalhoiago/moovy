@@ -4,7 +4,6 @@ export const Container = styled.section`
   button{
     width: 274px;
     height: 46px;
-    background: #FE6D8E;
     border: none;
     border-radius: 15px;
     position: relative;
@@ -27,8 +26,24 @@ export const Container = styled.section`
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 30px;
+    left: 10px;
     top: 8px;
+    
+  }
+
+  .red .icon{
     color: red;
+  }
+
+  .red {
+    background: #FE6D8E;
+  }
+
+  .green .icon{
+    color: green;
+  }
+
+  .green {
+    background: #0ACF83;
   }
 `;

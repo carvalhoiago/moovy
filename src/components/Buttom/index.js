@@ -1,12 +1,12 @@
 import { Container } from './styles'
 import { IoLibraryOutline } from 'react-icons/io5'
 
-export const Buttom = () => {
+export const Buttom = (props) => {
   return(
     <Container>
-      <button>
+      <button className={props.added?'red':'green'}>
         <IoLibraryOutline className='icon'/>
-        <span>Remove</span>
+        <span>{props.added?'Remove':'Add to My Library'}</span>
       </button>
     </Container>
   );

@@ -9,19 +9,19 @@ import { useState } from 'react';
 
 export const Search = () => {
 
-  const [movies, setMovies] = useState([]);
+  const [moviesSearched, setMoviesSearched] = useState([]);
 
   return(
     <Container>
       <Title>Search</Title>
       <div className='search-box'>
-        <SearchBar setState={setMovies}/>
+        <SearchBar setState={setMoviesSearched}/>
       </div>
       <div className='content'>
-      { movies.length > 0 ?
-        movies.map((movie, index)=>{
+      { moviesSearched.length > 0 ?
+        moviesSearched.map((movieSearched, index)=>{
           return (
-            <Card key={index} url={movie.Poster} title={movie.Title}/>
+            <Card key={index} movie={movieSearched} added={false}/>
           );
         })
       :
