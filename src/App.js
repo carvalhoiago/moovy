@@ -2,7 +2,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppRoutes } from './Routes'
 import  GlobalStyle  from './styles/Global'
 import { Navbar } from './components/Navbar'
-import { NotFound } from './components/NotFound'
 import LibraryProvider from "./components/contexts/useLibraryContext";
 
 function App() {

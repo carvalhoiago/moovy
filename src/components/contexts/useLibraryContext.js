@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect} from "react";
+import { createContext, useContext, useState} from "react";
 
 
 const LibraryContext = createContext();
@@ -9,7 +9,7 @@ const LibraryProvider = ({children}) => {
   const addMovie = (newMovie) => {
     let included = false;
     const list = []
-    movies.map((movie, index)=>{
+    movies.forEach((movie, index)=>{
       if (movie.imdbID === newMovie.imdbID){
         included = true;
       }else {

@@ -1,7 +1,6 @@
 import { Container } from './styles';
 import { Title } from '../../components/Title';
 import { Card } from '../../components/Card';
-import Rocky from '../../assets/rocky.jpg'
 import { useLibraryContext } from '../../components/contexts/useLibraryContext';
 import { NotFound } from '../../components/NotFound';
 

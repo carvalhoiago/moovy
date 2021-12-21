@@ -13,7 +13,7 @@ export const SearchBar = (props) => {
     if (title !== ''){
       OMDBapi.get('?apikey=5e1d897b&s='+title)
       .then((response)=>{
-        if(response.data.Response == "True"){
+        if(response.data.Response === "True"){
           props.setState(response.data.Search)
           console.log(response.data.Search);
         } else{
