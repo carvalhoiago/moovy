@@ -7,6 +7,7 @@ import { NotFound } from '../../components/NotFound';
 export const MyLibrary = () => {
 
   const { movies } = useLibraryContext();
+  
 
   return(
     <Container>
@@ -15,7 +16,7 @@ export const MyLibrary = () => {
       { movies.length > 0 ?
         movies.map((movie, index)=>{
           return (
-            <Card key={index} movie={movie} added={false}/>
+            <Card key={index} movie={movie}/>
           );
         })
       :

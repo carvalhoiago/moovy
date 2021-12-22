@@ -6,6 +6,7 @@ const LibraryContext = createContext();
 const LibraryProvider = ({children}) => {
   const [movies, setMovies] = useState([])
 
+
   const addMovie = (newMovie) => {
     let included = false;
     const list = []

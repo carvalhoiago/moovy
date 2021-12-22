@@ -9,13 +9,11 @@ export const SearchBar = (props) => {
 
   const searchMovies = (e) => {
     e.preventDefault();
-    console.log(title)
     if (title !== ''){
       OMDBapi.get('?apikey=5e1d897b&s='+title)
       .then((response)=>{
         if(response.data.Response === "True"){
           props.setState(response.data.Search)
-          console.log(response.data.Search);
         } else{
           props.setState([])
         }
