@@ -1,10 +1,20 @@
-import { createContext, useContext, useState} from "react";
+import { createContext, useContext, useState, useEffect} from "react";
+import { LocalDBapi } from "../../services/api";
 
 
 const LibraryContext = createContext();
 
 const LibraryProvider = ({children}) => {
   const [movies, setMovies] = useState([])
+
+  useEffect(()=>{
+    LocalDBapi.get('/movies')
+    .then((response)=>{
+      if(response.status === 200){
+        setMovies(response.data)
+      }
+    })
+  },[])
 
 
   const addMovie = (newMovie) => {
@@ -18,9 +28,19 @@ const LibraryProvider = ({children}) => {
       }
     })
     if (included){
-      setMovies(list)
+      LocalDBapi.delete('/movies/'+newMovie.imdbID)
+      .then((response)=>{
+        if(response.status === 200){
+          setMovies(list)
+        }
+      })
     }else{
-      setMovies(oldMovies => [...oldMovies, newMovie]);
+      LocalDBapi.post('/movies/', newMovie)
+      .then((response)=>{
+        if(response.status === 200){
+          setMovies(oldMovies => [...oldMovies, newMovie]);
+        }
+      })
     }  
   }
 
