@@ -21,7 +21,11 @@ export const ConfirmModal = (props) => {
           <h2>Remove from your library</h2>
           <p>
             Are you sure you want to remove from your library?
-            <span> It contains a audio review and you will lose it if you remove</span>
+            {props.movie.filename?
+              <span> It contains a audio review and you will lose it if you remove</span>
+            :
+              ""
+            }
           </p>
           <div className='buttons'>
             <div onClick={() => removeMovie(true)}>
